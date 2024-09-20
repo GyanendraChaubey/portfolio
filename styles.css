@@ -65,3 +65,75 @@ footer {
     color: white;
     margin-top: 30px;
 }
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section {
+        width: 95%;
+    }
+
+    .project-card, .publication-card {
+        padding: 10px;
+    }
+}
+
+/* Button Styles */
+.button {
+    background-color: #00cc99;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #009977;
+}
+
+/* Card Hover Effect */
+.project-card:hover, .publication-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Consistent Font Sizing */
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Link Styles */
+a {
+    color: #00cc99;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #009977;
+}
+
+/* Improved Footer */
+footer {
+    padding: 30px 20px;
+}

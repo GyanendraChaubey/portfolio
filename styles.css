@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
@@ -6,6 +7,7 @@ body {
     padding: 0;
 }
 
+/* Header Styles */
 header {
     background-color: #003366;
     color: white;
@@ -15,11 +17,19 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    padding: 5px;
+    background-color: #002244; /* Darker shade on scroll */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 header nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 header nav ul li {
@@ -33,16 +43,45 @@ header nav ul li a {
     font-weight: bold;
 }
 
+/* Profile Image Transition */
 .header-content img {
     width: 150px;
-    border-radius: 50%;
+    border-radius: 0%;
+    transition: width 0.3s ease;
+}
+
+header.scrolled .header-content img {
+    width: 100px;
+}
+
+/* Typography */
+h1 {
+    font-size: 2em;
+    margin: 0;
+    transition: font-size 0.3s ease;
+}
+
+header.scrolled h1 {
+    font-size: 1.5em;
 }
 
 h2 {
     text-align: center;
     color: #003366;
+    font-size: 1.5em;
+    margin-top: 20px;
 }
 
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Section Styling */
 section {
     width: 80%;
     margin: 30px auto;
@@ -52,37 +91,76 @@ section {
     border-radius: 10px;
 }
 
-.project-card, .publication-card {
+/* Profile Section */
+.profile-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.profile-image img {
+    width: 350px;
+    height: auto;
+    border-radius: 0%;
+}
+
+.profile-content {
+    flex: 1;
+    max-width: 700px;
+}
+
+.announcements {
+    flex: 1;
+    max-width: 700px;
+}
+
+/* Announcements & Cards */
+.project-card {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
     padding: 15px;
     border-left: 5px solid #00cc99;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #003366;
-    color: white;
-    margin-top: 30px;
+.project-image {
+    width: 250px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 5px;
 }
 
-/* Responsive Design Enhancements */
-@media (max-width: 768px) {
-    header nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    section {
-        width: 95%;
-    }
-
-    .project-card, .publication-card {
-        padding: 10px;
-    }
+.project-content {
+    flex: 1;
+}
+ 
+.publication-card {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-left: 5px solid #00cc99;
 }
 
-/* Button Styles */
+.publication-image {
+    width: 250px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.publication-content {
+    flex: 1;
+}
+
+.project-card:hover, .publication-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Buttons */
 .button {
     background-color: #00cc99;
     color: white;
@@ -97,32 +175,26 @@ footer {
     background-color: #009977;
 }
 
-/* Card Hover Effect */
-.project-card:hover, .publication-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-    transition: all 0.3s ease;
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #003366;
+    color: white;
+    margin-top: 30px;
 }
 
-/* Consistent Font Sizing */
-h1, h2, h3 {
-    font-weight: bold;
+footer .social-links {
+    margin-top: 10px;
+    text-align: center;
 }
 
-h1 {
-    font-size: 2em;
+footer p {
+    margin-top: 5px;
+    color: #00cc99;
 }
 
-h2 {
-    font-size: 1.5em;
-}
-
-p {
-    font-size: 1em;
-    line-height: 1.6;
-}
-
-/* Link Styles */
+/* Links */
 a {
     color: #00cc99;
     text-decoration: none;
@@ -133,7 +205,27 @@ a:hover {
     color: #009977;
 }
 
-/* Improved Footer */
-footer {
-    padding: 30px 20px;
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section {
+        width: 95%;
+    }
+
+    .project-card, .publication-card {
+        padding: 10px;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image img {
+        width: 120px;
+    }
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header id="main-header">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -20,36 +20,55 @@
     <section id="projects">
         <h2>Projects</h2>
         <div class="project-card">
-            <h3>RibCageImp: A 3D Deep Learning Framework for Rib Cage Implant Generation</h3>
-            <p>Prepared Data from scratch using RibFrac dataset. I have artificial created defected regions into the Ribcage and
-                generated corresponding implants as labels. In first phase, developed a deep learning model that takes CT scans
-                as input and generates 3D implants for rib cage generation.</p>
-            <a href="https://github.com/GyanendraChaubey/RibCageImp">View on GitHub</a>
+            <img src="images\illustration.png" alt="Project Image" class="project-image">
+            <div class="project-content">
+                <h3>RibCageImp: A 3D Deep Learning Framework for Rib Cage Implant Generation</h3>
+                <p>Prepared Data from scratch using RibFrac dataset. I have artificial created defected regions into the Ribcage and
+                    generated corresponding implants as labels. In first phase, developed a deep learning model that takes CT scans
+                    as input and generates 3D implants for rib cage generation.</p>
+                <a href="https://github.com/GyanendraChaubey/RibCageImp">View on GitHub</a>
+            </div>
         </div>
         <div class="project-card">
-            <h3>Image Generation Using Conditional GANs</h3>
-            <p>Generated dermoscopic lesion images using Conditional Generative Adversarial Networks (cGANs). Implemented
-                three different architectures for cGANs, including those with paired sketches and actual images, as well as with
-                sketches alone. Obtained a FID score of 0.22 with the second architecture.</p>
-            <a href="https://github.com/GyanendraChaubey/Dermoscopic-Image-Generation-using-cGAN">View on GitHub</a>
+            <img src="images\Result1_N3.png" alt="Project Image" class="project-image">
+            <div class="project-content">
+                <h3>Image Generation Using Conditional GANs</h3>
+                <p>Generated dermoscopic lesion images using Conditional Generative Adversarial Networks (cGANs). Implemented
+                    three different architectures for cGANs, including those with paired sketches and actual images, as well as with
+                    sketches alone. Obtained a FID score of 0.22 with the second architecture.</p>
+                <a href="https://github.com/GyanendraChaubey/Dermoscopic-Image-Generation-using-cGAN">View on GitHub</a>
+            </div>
+        </div>        
+        <div class="project-card">
+            <img src="images\K-Means_image2_cluster6.png" alt="Project Image" class="project-image">
+            <div class="project-content">
+                <h3>Image Segmentation Using K-Means Clustering and the Ratio Cut Algorithm</h3>
+                <p>Developed K-Means and Ratio Cut algorithms from scratch for image segmentation, comparing their performance
+                    with the Silhouette Score. For a 64x64 image with 3 clusters, K-Means achieved a score of 0.53 (indicating optimized
+                    results) versus 0.25 for Ratio Cut.</p>
+                <a href="https://github.com/GyanendraChaubey/Image-Segmentation-using-K-Means-clustering-and-Ratio-Cut">View on GitHub</a>
+            </div>
         </div>
         <div class="project-card">
-            <h3>Image Segmentation Using K-Means Clustering and the Ratio Cut Algorithm</h3>
-            <p>Developed K-Means and Ratio Cut algorithms from scratch for image segmentation, comparing their performance
-                with the Silhouette Score. For a 64x64 image with 3 clusters, K-Means achieved a score of 0.53 (indicating optimized
-                results) versus 0.25 for Ratio Cut.</p>
-            <a href="https://github.com/GyanendraChaubey/Image-Segmentation-using-K-Means-clustering-and-Ratio-Cut">View on GitHub</a>
-        </div>
-        <div class="project-card">
-            <h3>Corners Detection in Images</h3>
-            <p>Implemented the Harris Corner Detection algorithm from scratch and compared its performance with the OpenCV
-                library’s implementation. Achieved approximately 80-90% qualitative accuracy in both cases.</p>
-            <a href="https://github.com/GyanendraChaubey/Detecting-Corners-in-an-Image-using-Harris-Corner-detection">View on GitHub</a>
-        </div>
+            <img src="images\results9.jpg" alt="Project Image" class="project-image">
+            <div class="project-content">
+                <h3>Corners Detection in Images</h3>
+                <p>Implemented the Harris Corner Detection algorithm from scratch and compared its performance with the OpenCV
+                    library’s implementation. Achieved approximately 80-90% qualitative accuracy in both cases.</p>
+                <a href="https://github.com/GyanendraChaubey/Detecting-Corners-in-an-Image-using-Harris-Corner-detection">View on GitHub</a>
+            </div>
+        </div>       
         <!-- Add more projects -->
     </section>
     <footer>
+        <div class="social-links">
+            <a href="mailto:gyanendrachaubey68@gmail.com">Email Me</a> |
+            <a href="https://github.com/GyanendraChaubey">GitHub</a> |
+            <a href="https://scholar.google.com/citations?user=UKNVEgQAAAAJ">Google Scholar</a> |
+            <a href="https://www.linkedin.com/in/gyanendrachaubey/">LinkedIn</a>
+        </div>
         <p>© 2024 Gyanendra Chaubey | Data Scientist</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

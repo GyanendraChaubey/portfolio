@@ -124,6 +124,24 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float-slow {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 15px rgba(0, 219, 233, 0.1); }
+            50% { box-shadow: 0 0 40px rgba(0, 219, 233, 0.4); }
+            100% { box-shadow: 0 0 15px rgba(0, 219, 233, 0.1); }
+        }
+        .animate-glow-pulse {
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
         .bloom-cyan {
             box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
         }
@@ -405,7 +423,7 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-lowest border-t border-glass-edge bg-gradient-to-b from-transparent to-surface-charcoal full-width bottom-0">
+<footer class="bg-surface-container-lowest border-t border-glass-edge bg-gradient-to-b from-transparent to-surface-charcoal full-width bottom-0 mt-20 relative z-10">
 <div class="flex flex-col md:flex-row justify-between items-center w-full py-stack-lg px-section-padding max-w-container-max mx-auto">
 <div class="mb-stack-md md:mb-0">
 <p class="font-label-caps text-label-caps text-on-surface-variant mt-2">© 2026 Gyanendra Chaubey</p>

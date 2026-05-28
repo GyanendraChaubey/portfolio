@@ -1,75 +1,466 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Gyanendra Chaubey</title>
-    <link rel="stylesheet" href="styles.css">
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Laboratory | Gyanendra Chaubey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#d8b9ff",
+            "secondary-container": "#6e06d0",
+            "on-primary-fixed": "#002022",
+            "on-tertiary-fixed": "#1a1c1c",
+            "surface-bright": "#39393b",
+            "glass-edge": "rgba(255, 255, 255, 0.08)",
+            "on-secondary-fixed": "#290055",
+            "activity-violet-dim": "rgba(157, 80, 255, 0.15)",
+            "background": "#131315",
+            "surface-dim": "#131315",
+            "on-secondary-container": "#d5b5ff",
+            "tertiary": "#f5f5f5",
+            "surface-container-high": "#2a2a2c",
+            "on-primary": "#00363a",
+            "error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#454747",
+            "on-secondary-fixed-variant": "#6200bc",
+            "secondary-fixed-dim": "#d8b9ff",
+            "tertiary-container": "#d9d9d9",
+            "surface-container-low": "#1c1b1d",
+            "inverse-surface": "#e5e1e4",
+            "neural-cyan-dim": "rgba(0, 240, 255, 0.15)",
+            "surface-charcoal": "#121217",
+            "on-surface": "#e5e1e4",
+            "on-tertiary-container": "#5d5f5f",
+            "surface-container-lowest": "#0e0e10",
+            "on-surface-variant": "#b9cacb",
+            "surface": "#131315",
+            "on-tertiary": "#2f3131",
+            "surface-tint": "#00dbe9",
+            "inverse-primary": "#006970",
+            "surface-container-highest": "#353437",
+            "outline": "#849495",
+            "error": "#ffb4ab",
+            "outline-variant": "#3b494b",
+            "surface-variant": "#353437",
+            "primary-fixed": "#7df4ff",
+            "primary-fixed-dim": "#00dbe9",
+            "surface-container": "#201f21",
+            "on-primary-container": "#006970",
+            "primary": "#dbfcff",
+            "secondary-fixed": "#eddcff",
+            "on-error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#004f54",
+            "tertiary-fixed": "#e2e2e2",
+            "inverse-on-surface": "#313032",
+            "primary-container": "#00f0ff",
+            "on-error": "#690005",
+            "on-secondary": "#450086",
+            "tertiary-fixed-dim": "#c6c6c7",
+            "on-background": "#e5e1e4"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "section-padding": "6rem",
+            "container-max": "1200px",
+            "stack-md": "1.5rem",
+            "gutter": "2rem",
+            "stack-lg": "3rem",
+            "stack-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "headline-lg-mobile": ["JetBrains Mono"],
+            "code-snippet": ["JetBrains Mono"],
+            "label-caps": ["JetBrains Mono"],
+            "display-hero": ["JetBrains Mono"],
+            "headline-lg": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "body-md": ["16px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "code-snippet": ["14px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+            "display-hero": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+        body {
+            background-color: #0A0A0C;
+            color: #e5e1e4;
+            overflow-x: hidden;
+        }
+    body {
+      background-color: #0A0A0C;
+      background-image: 
+        radial-gradient(circle at 50% 50%, rgba(0, 219, 233, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 10% 10%, rgba(110, 6, 208, 0.03) 0%, transparent 30%);
+      color: #e5e1e4;
+    }
+    .glass-panel {
+      background: rgba(18, 18, 23, 0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glow-cyan:hover {
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .neural-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+  </style>
 </head>
-<body>
-    <header id="main-header">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="https://drive.google.com/file/d/1scMp81pFI7d6a0qwLat-r0OSM8ZDXaCl/view?usp=sharing">CV</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <img src="images\illustration.gif" alt="Project Image" class="project-image">
-            <div class="project-content">
-                <h3>RibCageImp: A 3D Deep Learning Framework for Rib Cage Implant Generation</h3>
-                <p>Prepared Data from scratch using RibFrac dataset. I have artificial created defected regions into the Ribcage and
-                    generated corresponding implants as labels. In first phase, developed a deep learning model that takes CT scans
-                    as input and generates 3D implants for rib cage generation.</p>
-                <a href="https://github.com/GyanendraChaubey/RibCageImp">GitHub</a> | 
-                <a href="https://ribcageimp.github.io">Project Page</a>
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="images\Result1_N3.png" alt="Project Image" class="project-image">
-            <div class="project-content">
-                <h3>Image Generation Using Conditional GANs</h3>
-                <p>Generated dermoscopic lesion images using Conditional Generative Adversarial Networks (cGANs). Implemented
-                    three different architectures for cGANs, including those with paired sketches and actual images, as well as with
-                    sketches alone. Obtained a FID score of 0.22 with the second architecture.</p>
-                <a href="https://github.com/GyanendraChaubey/Dermoscopic-Image-Generation-using-cGAN">GitHub</a>
-            </div>
-        </div>        
-        <div class="project-card">
-            <img src="images\K-Means_image2_cluster6.png" alt="Project Image" class="project-image">
-            <div class="project-content">
-                <h3>Image Segmentation Using K-Means Clustering and the Ratio Cut Algorithm</h3>
-                <p>Developed K-Means and Ratio Cut algorithms from scratch for image segmentation, comparing their performance
-                    with the Silhouette Score. For a 64x64 image with 3 clusters, K-Means achieved a score of 0.53 (indicating optimized
-                    results) versus 0.25 for Ratio Cut.</p>
-                <a href="https://github.com/GyanendraChaubey/Image-Segmentation-using-K-Means-clustering-and-Ratio-Cut">GitHub</a>
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="images\results9.jpg" alt="Project Image" class="project-image">
-            <div class="project-content">
-                <h3>Corners Detection in Images</h3>
-                <p>Implemented the Harris Corner Detection algorithm from scratch and compared its performance with the OpenCV
-                    library’s implementation. Achieved approximately 80-90% qualitative accuracy in both cases.</p>
-                <a href="https://github.com/GyanendraChaubey/Detecting-Corners-in-an-Image-using-Harris-Corner-detection">GitHub</a>
-            </div>
-        </div>       
-        <!-- Add more projects -->
-    </section>
-    <footer>
-        <div class="social-links">
-            <a href="mailto:gyanendrachaubey68@gmail.com">Email Me</a> |
-            <a href="https://github.com/GyanendraChaubey">GitHub</a> |
-            <a href="https://scholar.google.com/citations?user=UKNVEgQAAAAJ">Google Scholar</a> |
-            <a href="https://www.linkedin.com/in/gyanendrachaubey/">LinkedIn</a>
-        </div>
-        <p>© 2024 Gyanendra Chaubey | Data Scientist</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+<body class="font-body-md text-body-md antialiased">
+<canvas class="neural-bg" id="neural-canvas"></canvas>
+
+<div class="neural-bg" id="neural-pattern"></div>
+<!-- Top Navigation Bar -->
+<header class="bg-surface/70 backdrop-blur-xl border-b border-glass-edge shadow-[0_0_20px_rgba(0,240,255,0.1)] full-width top-0 sticky z-50 h-20">
+<div class="flex justify-between items-center w-full px-section-padding max-w-container-max mx-auto h-full">
+<div class="font-headline-lg text-headline-lg font-bold tracking-tighter text-primary-fixed-dim">
+        Gyanendra Chaubey
+      </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="index.html">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="publications.html">Research</a>
+<a class="font-label-caps text-label-caps text-primary-fixed-dim border-b-2 border-primary-fixed-dim pb-1" href="projects.html">Projects</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="https://drive.google.com/file/d/1g2N-t1fDXsT-9nTlwA7lGF88dtBexepn/view?usp=sharing" target="_blank">CV</a>
+</nav>
+<a href="contact.html" class="bg-primary-container text-on-primary font-label-caps text-label-caps px-6 py-2 rounded-full hover:bg-primary-fixed transition-all duration-300 active:scale-95 inline-block text-center">
+        Contact
+      </a>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-section-padding py-stack-lg">
+<!-- Hero Section -->
+<section class="mb-20">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-secondary tracking-[0.2em]">PORTFOLIO EXHIBITION</span>
+<h1 class="font-display-hero text-display-hero text-primary-fixed-dim mb-6">Project Laboratory</h1>
+<p class="max-w-2xl text-on-surface-variant font-body-md text-body-md leading-relaxed">
+          A collection of technical deep-dives into AI engineering, agentic systems, and high-performance data pipelines. These projects bridge the gap between theoretical deep learning and scalable production application.
+        </p>
+</div>
+</section>
+<!-- Featured Project: Calming AI -->
+<section class="mb-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-7 glass-panel p-8 flex flex-col justify-between group transition-all duration-500 glow-cyan rounded-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-20">
+<span class="material-symbols-outlined text-[120px] text-primary-fixed-dim">psychology</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-6">
+<span class="bg-secondary-container/30 text-secondary px-3 py-1 font-label-caps text-label-caps rounded-sm">Featured Work</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps">Brainwave Science</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Calming AI: Agentic Mental Wellness Platform</h2>
+<p class="text-on-surface-variant mb-8 max-w-xl">
+              Architected a production-grade multi-agent platform using LangGraph StateGraph, orchestrating specialized agents for emotional assessment and wisdom therapy with sub-second routing latency.
+            </p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="font-code-snippet text-code-snippet bg-surface-container px-3 py-1 rounded border border-glass-edge">LangGraph</span>
+<span class="font-code-snippet text-code-snippet bg-surface-container px-3 py-1 rounded border border-glass-edge">StateGraph</span>
+<span class="font-code-snippet text-code-snippet bg-surface-container px-3 py-1 rounded border border-glass-edge">Groq</span>
+<span class="font-code-snippet text-code-snippet bg-surface-container px-3 py-1 rounded border border-glass-edge">FAISS-HNSW</span>
+</div>
+</div>
+<div class="flex justify-between items-end relative z-10">
+<div class="flex gap-12">
+<div>
+<div class="font-headline-lg text-headline-lg text-primary-fixed-dim">95%</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Intent-Shift Accuracy</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-primary-fixed-dim">&lt;1s</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Routing Latency</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="lg:col-span-5 h-full">
+<div class="h-full glass-panel rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A sophisticated abstract visualization of a neural network being orchestrated by a state-flow diagram. The aesthetic features glowing nodes in cyan and violet, with sleek interconnecting lines suggesting high-speed data flow and state transitions. The background is a deep charcoal digital space with subtle grid patterns." src="images/image_0c4e3e7e3c.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Bento Grid -->
+<section class="mb-20">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-10">Industrial Experience &amp; Engineering</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Project 2: Multimodal RAG -->
+<div class="glass-panel p-6 flex flex-col glow-cyan transition-all rounded-xl border-l-4 border-l-primary-fixed-dim">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-4">IHUB &amp; HCI FOUNDATION, IIT MANDI</div>
+<h4 class="font-headline-lg text-[20px] leading-tight text-on-surface mb-3">Multimodal RAG with ColPali</h4>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">
+            Engineered a multimodal RAG pipeline for cross-modal retrieval across 1,000+ page technical PDFs, integrating Qdrant for scalable document search.
+          </p>
+<div class="flex items-center justify-between mt-auto">
+<div class="text-primary-fixed-dim font-headline-lg text-[24px]">1000+</div>
+<div class="text-right">
+<div class="font-label-caps text-[10px] text-on-surface-variant">PAGES INDEXED</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-glass-edge flex gap-2 overflow-hidden">
+<span class="font-code-snippet text-[10px] px-2 py-0.5 bg-surface-container rounded">ColPali</span>
+<span class="font-code-snippet text-[10px] px-2 py-0.5 bg-surface-container rounded">Qdrant</span>
+<span class="font-code-snippet text-[10px] px-2 py-0.5 bg-surface-container rounded">Multimodal</span>
+</div>
+</div>
+<!-- Project 3: RibCageImp -->
+<div class="glass-panel p-6 flex flex-col glow-cyan transition-all rounded-xl relative">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-4">M.TECH PROJECT - IIT JODHPUR</div>
+<h4 class="font-headline-lg text-[20px] leading-tight text-on-surface mb-3">RibCageImp: 3D Implant Gen</h4>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">
+            A 3D deep learning framework using UNet and diffusion architectures to predict patient-specific ribcage implant geometry from clinical CT scans.
+          </p>
+<div class="flex items-center justify-between mt-auto">
+<div class="text-primary-fixed-dim font-headline-lg text-[24px]">3D</div>
+<div class="text-right">
+<div class="font-label-caps text-[10px] text-on-surface-variant">GEOMETRY GEN</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-glass-edge flex gap-2">
+<span class="font-code-snippet text-[10px] px-2 py-0.5 bg-surface-container rounded">Diffusion</span>
+<span class="font-code-snippet text-[10px] px-2 py-0.5 bg-surface-container rounded">UNet</span>
+<span class="font-code-snippet text-[10px] px-2 py-0.5 bg-surface-container rounded">Medical AI</span>
+</div>
+</div>
+<!-- E-Commerce / HCL Context -->
+<div class="glass-panel p-6 flex flex-col glow-cyan transition-all rounded-xl">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-4">HCL TECHNOLOGIES</div>
+<h4 class="font-headline-lg text-[20px] leading-tight text-on-surface mb-3">Predictive E-Commerce Systems</h4>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">
+            Developed supervised ML models for next-purchase prediction, improving forecasting accuracy by 5% and streamlining dataRetraining workflows.
+          </p>
+<div class="flex items-center justify-between mt-auto">
+<div class="text-primary-fixed-dim font-headline-lg text-[24px]">98%+</div>
+<div class="text-right">
+<div class="font-label-caps text-[10px] text-on-surface-variant">DATA QUALITY</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-glass-edge flex gap-2">
+<span class="font-code-snippet text-[10px] px-2 py-0.5 bg-surface-container rounded">XGBoost</span>
+<span class="font-code-snippet text-[10px] px-2 py-0.5 bg-surface-container rounded">Snowflake</span>
+<span class="font-code-snippet text-[10px] px-2 py-0.5 bg-surface-container rounded">ETL</span>
+</div>
+</div>
+<!-- Project 4: ViT E-Commerce -->
+<div class="glass-panel p-6 flex flex-col glow-cyan transition-all rounded-xl border-l-4 border-l-primary-fixed-dim">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-4">E-COMMERCE CATALOGING</div>
+<h4 class="font-headline-lg text-[20px] leading-tight text-on-surface mb-3">Predicting Multiple Product Features</h4>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">
+  Proposed a dual-backbone architecture using ViT-H/14-quickgelu and ConvNext-XXLarge for predicting product attributes from images, achieving a score of 0.802.
+</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="text-primary-fixed-dim font-headline-lg text-[24px]">0.05s</div>
+<div class="text-right">
+<div class="font-label-caps text-[10px] text-on-surface-variant">INFERENCE/IMG</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-glass-edge flex gap-2 overflow-hidden">
+<span class="font-code-snippet text-[10px] px-2 py-0.5 bg-surface-container rounded">ViT</span>
+<span class="font-code-snippet text-[10px] px-2 py-0.5 bg-surface-container rounded">ConvNext</span>
+<span class="font-code-snippet text-[10px] px-2 py-0.5 bg-surface-container rounded">PyTorch</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Stack Horizontal -->
+<section class="glass-panel p-10 rounded-xl mb-20 overflow-hidden relative">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary-fixed-dim"></div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-8 tracking-widest">TECHNICAL COMPETENCIES</h3>
+<div class="flex flex-wrap gap-x-12 gap-y-8">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-[10px] text-secondary uppercase">LANGUAGES</span>
+<span class="font-headline-lg text-[18px] text-on-surface">Python, SQL, C++</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-[10px] text-secondary uppercase">AI/ML STACK</span>
+<span class="font-headline-lg text-[18px] text-on-surface leading-tight max-w-xl">PyTorch, TensorFlow, HuggingFace, scikit-learn, XGBoost, FAISS, Qdrant, ColPali, Pandas, NumPy, Vector Databases, Model Evaluation</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-[10px] text-secondary uppercase">GENAI &amp; AGENTIC AI</span>
+<span class="font-headline-lg text-[18px] text-on-surface leading-tight max-w-xl">LangGraph, LangChain, LlamaIndex, RAG (multimodal), Fine-tuning, RLHF, Diffusion Models, LLMs, Groq, Prompt Engineering, MCP, CrewAI, MLflow</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-[10px] text-secondary uppercase">DEPLOYMENT &amp; CLOUD</span>
+<span class="font-headline-lg text-[18px] text-on-surface leading-tight max-w-xl">FastAPI, Docker, Kubernetes, Nginx, React (TypeScript), AWS, GCP, Snowflake, BigQuery, Git, CI/CD</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-[10px] text-secondary uppercase">NLP &amp; COMPUTER VISION</span>
+<span class="font-headline-lg text-[18px] text-on-surface leading-tight max-w-xl">BERT, Semantic Search, Transformers, ViT, CNN, Object Detection, Image Segmentation</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-glass-edge bg-gradient-to-b from-transparent to-surface-charcoal full-width">
+<div class="flex flex-col md:flex-row justify-between items-center w-full py-stack-lg px-section-padding max-w-container-max mx-auto gap-8">
+<div class="font-body-md text-body-md text-secondary">
+        © 2026 Gyanendra Chaubey
+      </div>
+<div class="flex gap-6">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:translate-y-[-2px] transition-all duration-300" href="#">GitHub</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:translate-y-[-2px] transition-all duration-300" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:translate-y-[-2px] transition-all duration-300" href="#">Google Scholar</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:translate-y-[-2px] transition-all duration-300" href="#">Email</a>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interaction for neural pattern animation
+    const pattern = document.getElementById('neural-pattern');
+    let dots = [];
+    const numDots = 50;
+
+    for (let i = 0; i < numDots; i++) {
+      const dot = document.createElement('div');
+      dot.style.position = 'absolute';
+      dot.style.width = '2px';
+      dot.style.height = '2px';
+      dot.style.backgroundColor = '#00dbe9';
+      dot.style.borderRadius = '50%';
+      dot.style.left = Math.random() * 100 + 'vw';
+      dot.style.top = Math.random() * 100 + 'vh';
+      dot.style.opacity = Math.random() * 0.5;
+      pattern.appendChild(dot);
+      dots.push({
+        el: dot,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        vx: (Math.random() - 0.5) * 0.05,
+        vy: (Math.random() - 0.5) * 0.05
+      });
+    }
+
+    function animate() {
+      dots.forEach(dot => {
+        dot.x += dot.vx;
+        dot.y += dot.vy;
+        if (dot.x < 0 || dot.x > 100) dot.vx *= -1;
+        if (dot.y < 0 || dot.y > 100) dot.vy *= -1;
+        dot.el.style.left = dot.x + 'vw';
+        dot.el.style.top = dot.y + 'vh';
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+<script>
+    const canvas = document.getElementById('neural-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Resize canvas to fill window
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    const dots = [];
+    const numDots = 60;
+    const connectionDistance = 150;
+    let mouse = { x: null, y: null };
+
+    // Handle mouse movement
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+    window.addEventListener('mouseout', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    for (let i = 0; i < numDots; i++) {
+      dots.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 1,
+        vy: (Math.random() - 0.5) * 1,
+        radius: Math.random() * 2 + 1
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      dots.forEach(dot => {
+        dot.x += dot.vx;
+        dot.y += dot.vy;
+        
+        if (dot.x < 0 || dot.x > canvas.width) dot.vx *= -1;
+        if (dot.y < 0 || dot.y > canvas.height) dot.vy *= -1;
+        
+        ctx.beginPath();
+        ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+        ctx.fillStyle = '#00dbe9';
+        ctx.fill();
+      });
+
+      // Draw connections
+      for (let i = 0; i < dots.length; i++) {
+        for (let j = i + 1; j < dots.length; j++) {
+          const dx = dots[i].x - dots[j].x;
+          const dy = dots[i].y - dots[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          
+          if (dist < connectionDistance) {
+            ctx.beginPath();
+            ctx.moveTo(dots[i].x, dots[i].y);
+            ctx.lineTo(dots[j].x, dots[j].y);
+            ctx.strokeStyle = `rgba(0, 219, 233, ${1 - dist / connectionDistance})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+        
+        // Mouse interaction
+        if (mouse.x !== null) {
+          const dx = dots[i].x - mouse.x;
+          const dy = dots[i].y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < connectionDistance) {
+            ctx.beginPath();
+            ctx.moveTo(dots[i].x, dots[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = `rgba(110, 6, 208, ${1 - dist / connectionDistance})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body></html>

@@ -1,63 +1,510 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gyanendra Chaubey | Data Scientist</title>
-    <link rel="stylesheet" href="styles.css">
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gyanendra Chaubey | Agentic AI Research Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#d8b9ff",
+                    "secondary-container": "#6e06d0",
+                    "on-primary-fixed": "#002022",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "surface-bright": "#39393b",
+                    "glass-edge": "rgba(255, 255, 255, 0.08)",
+                    "on-secondary-fixed": "#290055",
+                    "activity-violet-dim": "rgba(157, 80, 255, 0.15)",
+                    "background": "#0A0A0C",
+                    "surface-dim": "#131315",
+                    "on-secondary-container": "#d5b5ff",
+                    "tertiary": "#f5f5f5",
+                    "surface-container-high": "#2a2a2c",
+                    "on-primary": "#00363a",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-secondary-fixed-variant": "#6200bc",
+                    "secondary-fixed-dim": "#d8b9ff",
+                    "tertiary-container": "#d9d9d9",
+                    "surface-container-low": "#1c1b1d",
+                    "inverse-surface": "#e5e1e4",
+                    "neural-cyan-dim": "rgba(0, 240, 255, 0.15)",
+                    "surface-charcoal": "#121217",
+                    "on-surface": "#e5e1e4",
+                    "on-tertiary-container": "#5d5f5f",
+                    "surface-container-lowest": "#0e0e10",
+                    "on-surface-variant": "#b9cacb",
+                    "surface": "#131315",
+                    "on-tertiary": "#2f3131",
+                    "surface-tint": "#00dbe9",
+                    "inverse-primary": "#006970",
+                    "surface-container-highest": "#353437",
+                    "outline": "#849495",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#3b494b",
+                    "surface-variant": "#353437",
+                    "primary-fixed": "#7df4ff",
+                    "primary-fixed-dim": "#00dbe9",
+                    "surface-container": "#201f21",
+                    "on-primary-container": "#006970",
+                    "primary": "#dbfcff",
+                    "secondary-fixed": "#eddcff",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#004f54",
+                    "tertiary-fixed": "#e2e2e2",
+                    "inverse-on-surface": "#313032",
+                    "primary-container": "#00f0ff",
+                    "on-error": "#690005",
+                    "on-secondary": "#450086",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-background": "#e5e1e4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-padding": "6rem",
+                    "container-max": "1200px",
+                    "stack-md": "1.5rem",
+                    "gutter": "2rem",
+                    "stack-lg": "3rem",
+                    "stack-sm": "0.5rem"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["JetBrains Mono"],
+                    "code-snippet": ["JetBrains Mono"],
+                    "label-caps": ["JetBrains Mono"],
+                    "display-hero": ["JetBrains Mono"],
+                    "headline-lg": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "code-snippet": ["14px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "display-hero": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0C;
+            color: #e5e1e4;
+            overflow-x: hidden;
+        }
+
+        .neural-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .glass-card {
+            background: rgba(18, 18, 23, 0.7);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .bloom-cyan {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+        }
+
+        .bloom-violet {
+            box-shadow: 0 0 20px rgba(216, 185, 255, 0.1);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .hero-mask {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        .tech-bracket {
+            position: relative;
+        }
+        .tech-bracket::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 20px;
+            height: 20px;
+            border-top: 2px solid #00dbe9;
+            border-left: 2px solid #00dbe9;
+        }
+        .tech-bracket::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            width: 20px;
+            height: 20px;
+            border-bottom: 2px solid #00dbe9;
+            border-right: 2px solid #00dbe9;
+        }
+    </style>
 </head>
-<body>
-    <header id="main-header">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="https://drive.google.com/file/d/1scMp81pFI7d6a0qwLat-r0OSM8ZDXaCl/view?usp=sharing">CV</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="summary">
-        <div class="profile-container">
-            <div class="profile-image">
-                <img src="images\profile.jpg" alt="Profile Picture">
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-fixed">
+<canvas class="neural-bg" id="neural-canvas"></canvas>
+<!-- TopNavBar -->
+<header class="bg-surface/70 backdrop-blur-xl docked full-width top-0 sticky border-b border-glass-edge shadow-[0_0_20px_rgba(0,240,255,0.1)] z-50 h-20">
+<nav class="flex justify-between items-center w-full px-section-padding max-w-container-max mx-auto h-full">
+<div class="font-headline-lg text-headline-lg font-bold tracking-tighter text-primary-fixed-dim">
+                Gyanendra Chaubey
             </div>
-            <div class="profile-content">
-                <h1>Gyanendra Chaubey</h1>
-                <p>Software Developer | Data Scientist | AI Researcher</p>
-                <p class="intro">Hello! I’m Gyanendra Chaubey, a tech enthusiast with a passion for pushing the boundaries of Deep Learning, Computer Vision, and GenAI. Currently pursuing my Master’s in Augmented Reality and Virtual Reality at School of AI and Data Science, IIT Jodhpur. I’m driven by the potential of technology to create meaningful solutions—especially in fields like retail and healthcare, where my recent projects have explored advanced imaging and implant generation under Prof. <a href="https://sites.google.com/iitj.ac.in/dmishra"> Dr. Deepak Mishra</a> at <a href="https://maisyslab.github.io/maisys/"> Medical AI Systems Lab</a> IIT Jodhpur.</p>
+<div class="hidden md:flex items-center space-x-gutter">
+<a class="font-label-caps text-label-caps text-primary-fixed-dim border-b-2 border-primary-fixed-dim pb-1" href="index.html">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="publications.html">Research</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="projects.html">Projects</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="https://drive.google.com/file/d/1g2N-t1fDXsT-9nTlwA7lGF88dtBexepn/view?usp=sharing" target="_blank">CV</a>
+<a href="contact.html" class="bg-primary-fixed-dim text-on-primary-fixed px-6 py-2 rounded-lg font-label-caps text-label-caps font-bold hover:opacity-80 active:scale-95 transition-all inline-block">
+                    Contact
+                </a>
+</div>
+<button class="md:hidden text-primary-fixed-dim">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center pt-20 px-section-padding max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center w-full">
+<!-- Left: Text Content -->
+<div class="md:col-span-7 z-10">
+<div class="mb-stack-sm text-secondary font-label-caps text-label-caps tracking-widest flex items-center gap-2">
+<span class="w-8 h-[1px] bg-secondary"></span>
+                        AI Research Engineer | Brainwave Science
+                    </div>
+<h1 class="font-display-hero text-display-hero mb-stack-md text-white leading-[1.1]">
+                        Architecting <span class="text-primary-fixed-dim">Agentic</span> AI Systems
+                    </h1>
+<div class="mb-stack-md text-on-surface-variant font-body-md italic border-l-2 border-primary-fixed-dim pl-4 max-w-xl">
+    "The essence of science is independent thinking, hard work, and not equipment."
+    <div class="text-primary-fixed-dim font-label-caps text-[10px] uppercase mt-2">— Sir C.V. Raman</div>
+</div>
+<div class="glass-card p-8 rounded-xl max-w-2xl border-l-4 border-l-primary-fixed-dim bloom-cyan">
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md leading-relaxed">
+                            Hello! I’m <span class="text-white font-bold">Gyanendra Chaubey</span>, an AI Research Engineer at Brainwave Science. I specialize in designing production-grade <span class="text-primary-fixed-dim">Agentic AI</span> systems, <span class="text-primary-fixed-dim">Multimodal RAG</span> pipelines, and sophisticated neural architectures across healthcare and enterprise ecosystems.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<a href="projects.html" class="bg-primary-fixed-dim text-on-primary-fixed px-8 py-3 rounded-lg font-label-caps text-label-caps font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all inline-flex">
+                                EXPLORE WORK <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a href="https://drive.google.com/file/d/1g2N-t1fDXsT-9nTlwA7lGF88dtBexepn/view?usp=sharing" target="_blank" class="border border-primary-fixed-dim text-primary-fixed-dim px-8 py-3 rounded-lg font-label-caps text-label-caps font-bold hover:bg-activity-violet-dim transition-all flex items-center justify-center inline-flex">
+                                DOWNLOAD CV
+                            </a>
+</div>
+</div>
+</div>
+<!-- Right: Profile Image -->
+<div class="md:col-span-5 relative flex justify-center mt-12 md:mt-0">
+<div class="relative w-full max-w-[400px] aspect-square tech-bracket">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary-fixed-dim/20 to-transparent rounded-xl z-0"></div>
+<img alt="Gyanendra Chaubey professional profile" class="w-full h-full object-cover rounded-xl shadow-2xl z-10 relative brightness-90 contrast-110" src="images/profile.jpg"/>
+<!-- Floating Badge -->
+<div class="absolute -bottom-6 -left-6 glass-card p-4 rounded-lg bloom-violet z-20">
+<div class="font-label-caps text-label-caps text-secondary mb-1">CURRENTLY</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-white leading-tight">AI Research Engineer<br/>@ Brainwave Science</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Stack / Focus Section -->
+<section class="py-section-padding px-section-padding max-w-container-max mx-auto overflow-hidden">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg mb-stack-sm text-white">Specialized Focus</h2>
+<div class="w-16 h-1 bg-primary-fixed-dim mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Agentic AI -->
+<div class="glass-card p-8 rounded-xl group hover:border-primary-fixed-dim transition-all duration-500">
+<div class="w-12 h-12 bg-neural-cyan-dim flex items-center justify-center rounded-lg mb-stack-md text-primary-fixed-dim">
+<span class="material-symbols-outlined text-3xl">smart_toy</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-white mb-stack-sm">Agentic AI</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Orchestrating multi-agent systems using <strong>LangGraph</strong> and <strong>CrewAI</strong> for complex reasoning and therapeutic state preservation.
+                    </p>
+<a class="mt-stack-md inline-flex items-center text-primary-fixed-dim font-label-caps text-label-caps gap-1 group-hover:gap-3 transition-all" href="projects.html">
+                        EXPLORE WORK <span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+<!-- Multimodal RAG -->
+<div class="glass-card p-8 rounded-xl group hover:border-primary-fixed-dim transition-all duration-500">
+<div class="w-12 h-12 bg-neural-cyan-dim flex items-center justify-center rounded-lg mb-stack-md text-primary-fixed-dim">
+<span class="material-symbols-outlined text-3xl">hub</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-white mb-stack-sm">Multimodal RAG</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Engineering cross-modal retrieval pipelines with <strong>ColPali</strong>, Qdrant, and <strong>Multimodal Embeddings</strong> for high-fidelity document search.
+                    </p>
+<a class="mt-stack-md inline-flex items-center text-primary-fixed-dim font-label-caps text-label-caps gap-1 group-hover:gap-3 transition-all" href="projects.html">
+                        EXPLORE WORK <span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+<!-- Deep Learning -->
+<div class="glass-card p-8 rounded-xl group hover:border-primary-fixed-dim transition-all duration-500">
+<div class="w-12 h-12 bg-neural-cyan-dim flex items-center justify-center rounded-lg mb-stack-md text-primary-fixed-dim">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-white mb-stack-sm">Neural Synthesis</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Developing advanced architectures for 3D medical reconstruction and generative modeling using PyTorch and Diffusion models.
+                    </p>
+<a class="mt-stack-md inline-flex items-center text-primary-fixed-dim font-label-caps text-label-caps gap-1 group-hover:gap-3 transition-all" href="projects.html">
+                        EXPLORE WORK <span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+</div>
+</section>
+<!-- News & Highlights (Bento-style layout) -->
+<section class="py-section-padding px-section-padding max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Engineering Impact Section -->
+<div class="md:col-span-8 flex flex-col gap-gutter">
+<div class="glass-card p-8 rounded-xl flex-grow border-l-4 border-l-secondary bloom-violet">
+<h2 class="font-headline-lg text-headline-lg text-white mb-stack-md">Engineering Impact</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-stack-lg">
+<div>
+<h4 class="font-label-caps text-label-caps text-primary-fixed-dim mb-2 uppercase">Brainwave Science</h4>
+<p class="font-body-md text-on-surface-variant">AI Research Engineer. Architected multi-agent platforms with 95% intent-shift detection and sub-second routing latency.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary-fixed-dim mb-2 uppercase">iHub (IIT Mandi)</h4>
+<p class="font-body-md text-on-surface-variant">Senior Associate. Engineered ColPali-based multimodal RAG for technical document retrieval across 1,000+ pages.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary-fixed-dim mb-2 uppercase">HCLTech</h4>
+<p class="font-body-md text-on-surface-variant">Software Engineer. Deployed supervised ML models for production e-commerce, and engineered 50+ ETL pipelines.</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+<div class="glass-card p-6 rounded-xl text-center">
+<div class="font-display-hero text-4xl text-primary-fixed-dim mb-1">03+</div>
+<div class="font-label-caps text-label-caps">Years Experience</div>
+</div>
+<div class="glass-card p-6 rounded-xl text-center">
+<div class="font-display-hero text-4xl text-primary-fixed-dim mb-1">11+</div>
+<div class="font-label-caps text-label-caps">Peer-Reviewed Papers</div>
+</div>
+</div>
+</div>
+<!-- Log Highlights Section -->
+<div class="md:col-span-4 glass-card p-8 rounded-xl">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-white mb-stack-lg">Career Highlights</h3>
+<div class="space-y-stack-lg relative" id="career-timeline-container">
+<!-- Vertical line -->
+<div class="absolute left-1 top-2 bottom-0 w-[1px] bg-gradient-to-b from-primary-fixed-dim to-transparent"></div>
+<!-- Visible Items -->
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim ring-4 ring-primary-fixed-dim/20"></div>
+<span class="font-label-caps text-label-caps text-secondary">APR 2026</span>
+<p class="font-body-md text-on-surface leading-tight mt-1">Authored "T2I-BiasBench" multi-metric auditing framework preprint.</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/90"></div>
+<span class="font-label-caps text-label-caps text-secondary">DEC 2025</span>
+<p class="font-body-md text-on-surface leading-tight mt-1">Accepted "RibCageImp" 3D Deep Learning framework at ICVGIP 2025.</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/80"></div>
+<span class="font-label-caps text-label-caps text-secondary">SEP 2025</span>
+<p class="font-body-md text-on-surface leading-tight mt-1">Joined Brainwave Science as AI Research Engineer.</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/70"></div>
+<span class="font-label-caps text-label-caps text-secondary">JUN 2025</span>
+<p class="font-body-md text-on-surface leading-tight mt-1">Joined iHub &amp; HCI Foundation, IIT Mandi as Senior Associate.</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/60"></div>
+<span class="font-label-caps text-label-caps text-secondary">MAY 2025</span>
+<p class="font-body-md text-on-surface leading-tight mt-1">Published in IEEE Access (Q1) on Genetic Algorithm-Based CNNs.</p>
+</div>
 
-                <p>Before IIT, I worked as a software engineer at HCL Technologies, where I developed data pipelines, refined data integration processes, and prepared data for implementation of machine learning algorithms. These experiences strengthened my technical skills and my commitment to precision, which I bring to every project I work on. Whether it’s crafting algorithms from scratch or experimenting with the latest machine learning models, I’m all about finding innovative ways to solve complex challenges.</p>
-                
-                <p>Outside of my studies and projects, I love to share my knowledge and collaborate with others, which has led me to serve in several leadership roles at IIT. I’m constantly exploring new avenues in tech, with an eye toward projects that make a tangible impact. Thanks for stopping by—I’m excited to connect and discuss anything tech-related!</p>
-                
-            </div>
-        </div>
-        <div class="project-card">
-            <div class="project-content">
-                <h2>News</h2>
-                <ul>
-                    <li><strong>[Nov'2024]</strong> Attended Sun Pharma Science Foundation National Symposium on “Artificial Intelligence in Healthcare”. </li> 
-                    <li><strong>[Oct'2024]</strong> Submitted a paper titled "RibCageImp: A Deep Learning Framework for 3D Ribcage Implant Generation" to ISBI 2025.</li>
-                    <li><strong>[Feb'2024]</strong> 2nd Prize for AVINYA Hackathon, ICMI 2024, IIT Jodhpur </li>
-                    <li><strong>[July'2023]</strong> Joined IIT, Jodhpur </li>
-                </ul>
-                <p>Stay tuned for more updates!</p>
-            </div>
-        </div>
-    </section>
-    
-    <footer>
-        <div class="social-links">
-            <a href="mailto:gyanendrachaubey68@gmail.com">Email Me</a> |
-            <a href="https://github.com/GyanendraChaubey">GitHub</a> |
-            <a href="https://scholar.google.com/citations?user=UKNVEgQAAAAJ">Google Scholar</a> |
-            <a href="https://www.linkedin.com/in/gyanendrachaubey/">LinkedIn</a>
-        </div>
-        <p>© 2024 Gyanendra Chaubey | Data Scientist</p>
-    </footer>
+<!-- Hidden Items Toggle Container -->
+<div id="hidden-career-items" class="hidden space-y-stack-lg">
+    <div class="relative pl-8 mt-stack-lg">
+        <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/50"></div>
+        <span class="font-label-caps text-label-caps text-secondary">APR 2025</span>
+        <p class="font-body-md text-on-surface leading-tight mt-1">Completed M.Tech in AI &amp; Data Science at IIT Jodhpur.</p>
+    </div>
+    <div class="relative pl-8">
+        <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/40"></div>
+        <span class="font-label-caps text-label-caps text-secondary">FEB 2024</span>
+        <p class="font-body-md text-on-surface leading-tight mt-1">Awarded 2nd Prize for AVINYA Hackathon, ICMI 2024.</p>
+    </div>
+    <div class="relative pl-8">
+        <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/20"></div>
+        <span class="font-label-caps text-label-caps text-secondary">2022 - 2023</span>
+        <p class="font-body-md text-on-surface leading-tight mt-1">Published major research in Springer JAIHC (Q2) and IETE Journal.</p>
+    </div>
+    <div class="relative pl-8">
+        <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/10"></div>
+        <span class="font-label-caps text-label-caps text-secondary">APR 2021</span>
+        <p class="font-body-md text-on-surface leading-tight mt-1">Joined HCLTech as Software Engineer.</p>
+    </div>
+    <div class="relative pl-8">
+        <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/10"></div>
+        <span class="font-label-caps text-label-caps text-secondary">2020</span>
+        <p class="font-body-md text-on-surface leading-tight mt-1">Published first academic paper on Thyroid Disease Prediction.</p>
+    </div>
+    <div class="relative pl-8">
+        <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/10"></div>
+        <span class="font-label-caps text-label-caps text-secondary">2020</span>
+        <p class="font-body-md text-on-surface leading-tight mt-1">Graduated B.Tech as Institute Branch Topper at REC Banda.</p>
+    </div>
+</div>
+</div>
+<!-- View More Button -->
+<button onclick="document.getElementById('hidden-career-items').classList.toggle('hidden'); this.textContent = this.textContent.trim() === 'VIEW MORE' ? 'VIEW LESS' : 'VIEW MORE'" class="mt-8 font-label-caps text-label-caps text-primary-fixed-dim border border-primary-fixed-dim/30 px-4 py-2 rounded hover:bg-primary-fixed-dim hover:text-background transition-colors w-full text-center">
+    VIEW MORE
+</button>
+</div>
+</div>
+</section>
+<!-- Dynamic Lab Section -->
+<section class="py-section-padding">
+<div class="w-full h-96 relative overflow-hidden">
+<img class="w-full h-full object-cover opacity-40 hero-mask" data-alt="A futuristic laboratory scene with complex digital interfaces, glowing cyan data visualizations, and robotic hardware on clean, minimalist benches." src="images/image_97d9edd46d.jpg"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center px-6">
+<div class="font-label-caps text-label-caps text-primary-fixed-dim mb-4 tracking-[0.4em]">CURRENT RESEARCH</div>
+<h2 class="font-display-hero text-5xl md:text-6xl text-white mb-stack-md">Calming AI: Agentic Therapy</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">
+                            Developing a production-grade multi-agent platform using LangGraph for mental wellness, orchestrating specialized LLM agents for emotional assessment and crisis detection.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-glass-edge bg-gradient-to-b from-transparent to-surface-charcoal full-width bottom-0">
+<div class="flex flex-col md:flex-row justify-between items-center w-full py-stack-lg px-section-padding max-w-container-max mx-auto">
+<div class="mb-stack-md md:mb-0">
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2">© 2026 Gyanendra Chaubey</p>
+</div>
+<div class="flex gap-stack-lg">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:glow-secondary transition-all hover:translate-y-[-2px] transition-transform duration-300" href="https://github.com/GyanendraChaubey">GitHub</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:glow-secondary transition-all hover:translate-y-[-2px] transition-transform duration-300" href="https://www.linkedin.com/in/gyanendrachaubey/">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:glow-secondary transition-all hover:translate-y-[-2px] transition-transform duration-300" href="https://scholar.google.com/citations?user=UKNVEgQAAAAJ">Scholar</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:glow-secondary transition-all hover:translate-y-[-2px] transition-transform duration-300" href="mailto:gyanendrachaubey68@gmail.com">Email</a>
+</div>
+</div>
+</footer>
+    <script>
+        const canvas = document.getElementById('neural-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Resize canvas to fill window
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
 
- <script src="script.js"></script>
-</body>
-</html>
+        const dots = [];
+        const numDots = 60;
+        const connectionDistance = 150;
+        let mouse = { x: null, y: null };
+
+        // Handle mouse movement
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        for (let i = 0; i < numDots; i++) {
+            dots.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 1,
+                vy: (Math.random() - 0.5) * 1,
+                radius: Math.random() * 2 + 1
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            dots.forEach(dot => {
+                dot.x += dot.vx;
+                dot.y += dot.vy;
+                
+                if (dot.x < 0 || dot.x > canvas.width) dot.vx *= -1;
+                if (dot.y < 0 || dot.y > canvas.height) dot.vy *= -1;
+                
+                ctx.beginPath();
+                ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#00dbe9';
+                ctx.fill();
+            });
+
+            // Draw connections
+            for (let i = 0; i < dots.length; i++) {
+                for (let j = i + 1; j < dots.length; j++) {
+                    const dx = dots[i].x - dots[j].x;
+                    const dy = dots[i].y - dots[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist < connectionDistance) {
+                        ctx.beginPath();
+                        ctx.moveTo(dots[i].x, dots[i].y);
+                        ctx.lineTo(dots[j].x, dots[j].y);
+                        ctx.strokeStyle = `rgba(0, 219, 233, ${1 - dist / connectionDistance})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+                
+                // Mouse interaction
+                if (mouse.x !== null) {
+                    const dx = dots[i].x - mouse.x;
+                    const dy = dots[i].y - mouse.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < connectionDistance) {
+                        ctx.beginPath();
+                        ctx.moveTo(dots[i].x, dots[i].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.strokeStyle = `rgba(110, 6, 208, ${1 - dist / connectionDistance})`;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body></html>

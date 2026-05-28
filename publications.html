@@ -1,113 +1,484 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications | Gyanendra Chaubey</title>
-    <link rel="stylesheet" href="styles.css">
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Publications | Gyanendra Chaubey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary": "#d8b9ff",
+            "secondary-container": "#6e06d0",
+            "on-primary-fixed": "#002022",
+            "on-tertiary-fixed": "#1a1c1c",
+            "surface-bright": "#39393b",
+            "glass-edge": "rgba(255, 255, 255, 0.08)",
+            "on-secondary-fixed": "#290055",
+            "activity-violet-dim": "rgba(157, 80, 255, 0.15)",
+            "background": "#131315",
+            "surface-dim": "#131315",
+            "on-secondary-container": "#d5b5ff",
+            "tertiary": "#f5f5f5",
+            "surface-container-high": "#2a2a2c",
+            "on-primary": "#00363a",
+            "error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#454747",
+            "on-secondary-fixed-variant": "#6200bc",
+            "secondary-fixed-dim": "#d8b9ff",
+            "tertiary-container": "#d9d9d9",
+            "surface-container-low": "#1c1b1d",
+            "inverse-surface": "#e5e1e4",
+            "neural-cyan-dim": "rgba(0, 240, 255, 0.15)",
+            "surface-charcoal": "#121217",
+            "on-surface": "#e5e1e4",
+            "on-tertiary-container": "#5d5f5f",
+            "surface-container-lowest": "#0e0e10",
+            "on-surface-variant": "#b9cacb",
+            "surface": "#131315",
+            "on-tertiary": "#2f3131",
+            "surface-tint": "#00dbe9",
+            "inverse-primary": "#006970",
+            "surface-container-highest": "#353437",
+            "outline": "#849495",
+            "error": "#ffb4ab",
+            "outline-variant": "#3b494b",
+            "surface-variant": "#353437",
+            "primary-fixed": "#7df4ff",
+            "primary-fixed-dim": "#00dbe9",
+            "surface-container": "#201f21",
+            "on-primary-container": "#006970",
+            "primary": "#dbfcff",
+            "secondary-fixed": "#eddcff",
+            "on-error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#004f54",
+            "tertiary-fixed": "#e2e2e2",
+            "inverse-on-surface": "#313032",
+            "primary-container": "#00f0ff",
+            "on-error": "#690005",
+            "on-secondary": "#450086",
+            "tertiary-fixed-dim": "#c6c6c7",
+            "on-background": "#e5e1e4"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "section-padding": "6rem",
+            "container-max": "1200px",
+            "stack-md": "1.5rem",
+            "gutter": "2rem",
+            "stack-lg": "3rem",
+            "stack-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "headline-lg-mobile": ["JetBrains Mono"],
+            "code-snippet": ["JetBrains Mono"],
+            "label-caps": ["JetBrains Mono"],
+            "display-hero": ["JetBrains Mono"],
+            "headline-lg": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "body-md": ["16px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "code-snippet": ["14px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+            "display-hero": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+        body {
+            background-color: #0A0A0C;
+            color: #e5e1e4;
+            overflow-x: hidden;
+        }
+    .glass-card {
+      background: rgba(18, 18, 23, 0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .neural-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+.glow-cyan:hover {
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+    }
+    .timeline-gradient {
+      background: linear-gradient(to bottom, #00dbe9 0%, transparent 100%);
+    }
+    .math-symbol {
+      font-family: 'JetBrains Mono', monospace;
+      opacity: 0.3;
+    }
+  </style>
 </head>
-<body>
-    <header id="main-header">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="https://drive.google.com/file/d/1scMp81pFI7d6a0qwLat-r0OSM8ZDXaCl/view?usp=sharing">CV</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="publications">
-        <h2>Publications</h2>
-        <div class="project-card">
-            <img src="images\erythmato.jpg" alt="Project Image" class="publication-image">
-            <div class="publication-content">
-                <h3>Erythemato-Squamous Diseases Prediction and Interpretation Using Explainable AI</h3>
-                <p>Diagnosing erythemato-squamous diseases (ESD) is challenging in dermatology, with six main categories. 
-                    This study applies Random Forest and XGBoost models to a standard dataset, using SHAP values to interpret model decisions and enhance transparency. 
-                    The Random Forest model achieved 98.21% accuracy, while explainability tools identified disease root causes, improving trust and addressing ethical concerns like transparency and interpretability in AI-driven healthcare.</p>
-                <a href="https://doi.org/10.1080/03772063.2022.2114953">Paper</a> | IETE Journal of Research | Q3
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="images\customer_purchasing.png" alt="Project Image" class="publication-image">
-            <div class="publication-content">
-                <h3>Customer Purchasing Behavior Prediction Using Machine Learning Classification Techniques</h3>
-                <p>Many sales and service companies target existing customers to promote new products and updates, analyzing purchasing behavior to refine sales strategies. 
-                    This paper compares machine learning models for predicting customer behavior, including methods like logistic regression, decision trees, KNN, SVM, random forest, and ensemble hybrids (e.g., SvmAda, RfAda, KnnSgd). Models were assessed via cross-validation, with confusion matrix and ROC curve analysis. 
-                    The top-performing model, KnnSgd, achieved 92.42% accuracy by minimizing KNN and SGD errors through stacking.</p>
-                <a href="https://doi.org/10.1007/s12652-022-03837-6">Paper</a> | Journal of Ambient Intelligence and Humanized Computing | Q1
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="images\IJBAN_thyroid.png" alt="Project Image" class="publication-image">
-            <div class="publication-content">
-                <h3>Developing an Explainable Machine Learning-Based Thyroid Disease
-                    Prediction Model</h3>
-                <p>Machine learning is widely used in healthcare, but many models lack transparency, leading to black-box systems that can limit trust and adoption in medical settings. 
-                    This work focuses on an explainable thyroid disease diagnosis system, using SHAP—a game theory-based interpretability method—to clarify model behavior both locally and globally. 
-                    By highlighting feature importance and model insights, this approach supports doctors in understanding disease causality and selecting effective treatments, enhancing system reliability and social acceptability.</p>
-                <a href="https://www.igi-global.com/article/developing-explainable-machine-learning-based/292058">Paper</a> | IJBAN | Q4
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="images\arjar2-p7-arjar-large.gif" alt="Project Image" class="publication-image">
-            <div class="publication-content">
-                <h3>Hand Gesture Identification System Using Convolutional
-                    Neural Networks</h3>
-                <p>Hand movement recognition is essential in advancing human-machine interaction, with applications like sign language interpretation. 
-                    This paper presents a practical approach to hand gesture detection using a Convolutional Neural Network (CNN). 
-                    Key stages include data acquisition, pre-processing, segmentation, feature extraction, and classification, with a discussion on algorithms, their advantages, challenges, and limitations. 
-                    This method, tested on 8,700 images, achieved over 95% classification accuracy. 
-                    The best-performing model, KnnSgd, reached 92.42% accuracy by reducing KNN and SGD errors through stacking, supporting future research in gesture recognition.</p>
-                <a href="https://doi.org/10.1109/AIMV53313.2021.9670906">Paper</a> | IEEE Xplore | AIMV'21 | Conf. Paper
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="images\Handwriting_analysis.png" alt="Project Image" class="publication-image">
-            <div class="publication-content">
-                <h3>Personality Prediction Through Handwriting Analysis Using Convolutional Neural Networks</h3>
-                <p>The prediction of personality traits through handwriting analysis is done by the Graphologist. 
-                    The famous methodology of doing this analysis is commonly known as graphology. 
-                    The prediction of personality traits using handwriting depends upon how much the graphologist is efficient in doing so. 
-                    The development of computer-based handwriting analysis algorithm can make a great impact in predicting personality traits. 
-                    In this paper, convolutional neural network (CNN) is used to predict the five big personality traits (Agreeableness, Conscientiousness, Extraversion, Neuroticism, Openness) of the writer at the time of writing.</p>
-                <a href="https://doi.org/10.1007/978-981-16-3802-2_5">Paper</a> | ICCI 2020 | Book Chapter
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="images\hjorth.png" alt="Project Image" class="publication-image">
-            <div class="publication-content">
-                <h3>Hjorth Parameter based Seizure Diagnosis using Cluster Analysis</h3>
-                <p> The rise in health issues over recent years has increased the demand for advanced healthcare tools to assist doctors in intelligent patient care. 
-                    Biomedical signals, particularly from the brain, provide valuable insights but are difficult for non-experts to interpret. 
-                    Epilepsy, affecting around 50 million people worldwide, manifests as abnormal neural activity and seizures. 
-                    This paper proposes an advanced diagnostic approach using clustering algorithms to classify EEG data into normal and epileptic states by extracting Hjorth parameters. 
-                    Among k-means, BSAS, PAM, FCM, and Valley-Seeking algorithms, Valley-Seeking achieved the highest accuracy at 87% for seizure detection.</p>
-                <a href="https://iopscience.iop.org/article/10.1088/1742-6596/1998/1/012020">Paper</a> | Journal of Physics: Conf. Series | Q4
-            </div>
-        </div>
-        <div class="project-card">
-            <img src="images\Thyroid.png" alt="Project Image" class="publication-image">
-            <div class="publication-content">
-                <h3>Thyroid Disease Prediction Using Machine Learning Approaches</h3>
-                <p>This paper is being written to provide a source of reference for the research scholars who want to work in the area of prediction of thyroid disease. 
-                    From the different machine learning techniques, compared widely used three algorithms namely logistic regression, decision trees and k-nearest neighbor (kNN) algorithms to predict and evaluate their performance in terms of accuracy. 
-                    This study has represented the intuition of how to predict the thyroid disease and highlighted how to apply the logistic regression, decision trees and kNN as a tool for the classification. 
-                    For this, thyroid data set of machine learning repository has used from UC Irvin knowledge discovery in databases archive.</p>
-                <a href="https://doi.org/10.1007/s40009-020-00979-z">Paper</a> | National Academy of Science Letters | Q3
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="social-links">
-            <a href="mailto:gyanendrachaubey68@gmail.com">Email Me</a> |
-            <a href="https://github.com/GyanendraChaubey">GitHub</a> |
-            <a href="https://scholar.google.com/citations?user=UKNVEgQAAAAJ">Google Scholar</a> |
-            <a href="https://www.linkedin.com/in/gyanendrachaubey/">LinkedIn</a>
-        </div>
-        <p>© 2024 Gyanendra Chaubey | Data Scientist</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+<body class="bg-background text-on-background min-h-screen selection:bg-primary-container selection:text-on-primary">
+<canvas class="neural-bg" id="neural-canvas"></canvas>
+
+<!-- TopNavBar -->
+<header class="bg-surface/70 backdrop-blur-xl border-b border-glass-edge shadow-[0_0_20px_rgba(0,240,255,0.1)] docked full-width top-0 sticky z-50">
+<nav class="flex justify-between items-center w-full px-section-padding max-w-container-max mx-auto h-20">
+<div class="font-headline-lg text-headline-lg font-bold tracking-tighter text-primary-fixed-dim">
+        Gyanendra Chaubey
+      </div>
+<div class="hidden md:flex space-x-gutter items-center">
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300 font-label-caps text-label-caps" href="index.html">Home</a>
+<a class="text-primary-fixed-dim border-b-2 border-primary-fixed-dim pb-1 font-label-caps text-label-caps" href="publications.html">Research</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300 font-label-caps text-label-caps" href="projects.html">Projects</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300 font-label-caps text-label-caps" href="https://drive.google.com/file/d/1g2N-t1fDXsT-9nTlwA7lGF88dtBexepn/view?usp=sharing" target="_blank">CV</a>
+<a href="contact.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-caps text-label-caps hover:bg-activity-violet-dim hover:text-primary-fixed-dim transition-all duration-300 inline-block text-center">
+          Contact
+        </a>
+</div>
+<button class="md:hidden text-primary-fixed-dim">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-6 md:px-section-padding py-stack-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Publications -->
+<section class="lg:col-span-8 space-y-stack-lg">
+<div class="mb-stack-lg">
+<h1 class="font-display-hero text-headline-lg md:text-display-hero text-primary mb-stack-sm">Publications</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Advancing generative AI, multimodal perception, and medical computer vision through state-of-the-art deep learning frameworks.
+          </p>
+</div>
+<!-- Publication Card 1: T2I-BiasBench -->
+<article class="glass-card p-stack-md rounded-xl group transition-all duration-500 glow-cyan relative overflow-hidden">
+<div class="absolute -right-4 -top-4 math-symbol text-6xl">Δ</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-secondary tracking-widest px-2 py-1 border border-secondary/30 rounded">arXiv 2026</span>
+<a href="https://arxiv.org/abs/2604.12481" target="_blank" class="font-label-caps text-label-caps text-primary-fixed-dim hover:text-secondary transition-colors underline opacity-80">arXiv:2604.12481</a>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary leading-tight">
+  T2I-BiasBench: A Multi-Metric Framework for Auditing Demographic and Cultural Bias in Text-to-Image Models
+</h2>
+<div class="font-body-md text-body-md text-on-surface-variant italic">
+  Jaiswal, N., Arjaria, S., <span class="text-on-surface font-semibold">Chaubey, G.</span>, Kumar, A., Singh, A., Chaurasiya, A.
+</div>
+<div class="p-4 bg-surface-container-lowest/50 rounded-lg border-l-4 border-primary-container">
+<p class="font-label-caps text-[10px] text-primary-fixed-dim mb-1 uppercase tracking-tighter">TL;DR</p>
+<p class="font-body-md text-body-md text-on-surface">
+    A comprehensive evaluation framework utilizing multi-metric auditing to quantify demographic disparities and cultural representational biases within state-of-the-art text-to-image diffusion models.
+  </p>
+</div>
+</div>
+</article>
+<!-- Publication Card 2: Genetic Algorithm -->
+<article class="glass-card p-stack-md rounded-xl group transition-all duration-500 glow-cyan relative overflow-hidden">
+<div class="absolute -right-4 -top-4 math-symbol text-6xl">λ</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-secondary tracking-widest px-2 py-1 border border-secondary/30 rounded">IEEE Access 2025</span>
+<span class="font-label-caps text-label-caps text-primary-fixed-dim opacity-60">Q1 Journal</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary leading-tight">
+  Genetic Algorithm-Based Search Space Exploration to Generate Best Convolutional Neural Network
+</h2>
+<div class="font-body-md text-body-md text-on-surface-variant italic">
+  Bisen, D., Saurabh, P., Thakur, M., <span class="text-on-surface font-semibold">Chaubey, G.</span>, Singh, U., Dubey, A.
+</div>
+<div class="p-4 bg-surface-container-lowest/50 rounded-lg border-l-4 border-secondary">
+<p class="font-label-caps text-[10px] text-secondary mb-1 uppercase tracking-tighter">TL;DR</p>
+<p class="font-body-md text-body-md text-on-surface">
+    Implementing evolutionary search strategies to optimize neural architecture design, automatically discovering high-performance convolutional topologies through genetic algorithm-driven space exploration.
+  </p>
+</div>
+</div>
+</article>
+<!-- Publication Card 3: RibCageImp -->
+<article class="glass-card p-stack-md rounded-xl group transition-all duration-500 glow-cyan relative overflow-hidden">
+<div class="absolute -right-4 -top-4 math-symbol text-6xl">Σ</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start gap-2">
+<span class="font-label-caps text-label-caps text-secondary tracking-widest px-2 py-1 border border-secondary/30 rounded">ICVGIP 2025</span>
+<a href="https://arxiv.org/abs/2411.09204" target="_blank" class="font-label-caps text-label-caps text-primary-fixed-dim hover:text-secondary transition-colors underline opacity-80 text-right">arXiv:2411.09204</a>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary leading-tight">
+  RibCageImp: A Deep Learning Framework for 3D Ribcage Implant Generation
+</h2>
+<div class="font-body-md text-body-md text-on-surface-variant italic">
+<span class="text-on-surface font-semibold">Chaubey, G.</span>, Farooq, A., Singh, A., Mishra, D.
+</div>
+<div class="p-4 bg-surface-container-lowest/50 rounded-lg border-l-4 border-primary-container">
+<p class="font-label-caps text-[10px] text-primary-fixed-dim mb-1 uppercase tracking-tighter">TL;DR</p>
+<p class="font-body-md text-body-md text-on-surface">
+    Leveraging UNet and Diffusion architectures for automated 3D reconstruction of custom ribcage implants from CT scans, enabling precise patient-specific surgical modeling.
+  </p>
+</div>
+</div>
+</article>
+<!-- Publication Card 4: Erythemato-Squamous -->
+<article class="glass-card p-stack-md rounded-xl group transition-all duration-500 glow-cyan relative overflow-hidden opacity-90">
+<div class="absolute -right-4 -top-4 math-symbol text-6xl">∫</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant px-2 py-1 border border-glass-edge rounded">IETE Journal of Research 2024</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-60">Peer-reviewed</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary opacity-80 leading-tight">
+  Erythemato-Squamous Diseases Prediction and Interpretation Using Explainable AI
+</h2>
+<div class="font-body-md text-body-md text-on-surface-variant italic">
+  Rathore, A. S., Arjaria, S., Gupta, M., <span class="text-on-surface font-semibold">Chaubey, G.</span>, et al.
+</div>
+<div class="p-4 bg-surface-container-lowest/30 rounded-lg border-l-4 border-outline">
+<p class="font-label-caps text-[10px] text-on-surface-variant mb-1 uppercase tracking-tighter">TL;DR</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+    Application of XAI techniques to dermatologist-level diagnostic models for squamous disease classification, focusing on model transparency and feature importance for clinical trust.
+  </p>
+</div>
+</div>
+</article>
+<!-- Publication Card 5: Customer Purchasing Behavior -->
+<article class="glass-card p-stack-md rounded-xl group transition-all duration-500 glow-cyan relative overflow-hidden opacity-80">
+<div class="absolute -right-4 -top-4 math-symbol text-6xl">μ</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant px-2 py-1 border border-glass-edge rounded">Springer JAIHC 2023</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-60">Q2 Journal</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary opacity-80 leading-tight">
+Customer Purchasing Behavior Prediction using Machine Learning Supervised Methods
+</h2>
+<div class="font-body-md text-body-md text-on-surface-variant italic">
+<span class="text-on-surface font-semibold">Chaubey, G.</span>, Gavhane, P.R., Bisen, D., Arjaria, S.
+</div>
+</div>
+</article>
+<!-- View More Scholar Button -->
+<a href="https://scholar.google.com/citations?user=UKNVEgQAAAAJ" target="_blank" class="mt-12 font-label-caps text-label-caps text-primary-fixed-dim border border-primary-fixed-dim/30 px-6 py-4 rounded-xl hover:bg-primary-fixed-dim hover:text-background transition-colors w-full text-center flex items-center justify-center gap-3 group">
+    VIEW ALL PUBLICATIONS ON GOOGLE SCHOLAR <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">open_in_new</span>
+</a>
+</section>
+<!-- Right Column: Research News & Meta -->
+<aside class="lg:col-span-4 space-y-stack-lg ">
+<div class="glass-card p-stack-md rounded-xl">
+<h3 class="font-headline-lg text-headline-lg text-secondary mb-stack-md flex items-center gap-3">
+<span class="material-symbols-outlined">analytics</span>
+            Research News
+          </h3>
+<div class="space-y-stack-lg relative">
+<div class="absolute left-1 top-2 bottom-0 w-[1px] bg-gradient-to-b from-primary-fixed-dim to-transparent"></div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim ring-4 ring-primary-fixed-dim/20"></div>
+<p class="font-label-caps text-label-caps text-secondary mb-1">Apr 2026</p>
+<p class="font-body-md text-body-md text-on-surface">Published <span class="text-primary-fixed-dim">"T2I-BiasBench"</span> preprint on arXiv.</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/90"></div>
+<p class="font-label-caps text-label-caps text-secondary mb-1">Dec 2025</p>
+<p class="font-body-md text-body-md text-on-surface">Accepted <span class="text-primary-fixed-dim">"RibCageImp"</span> 3D Deep Learning framework at ICVGIP 2025.</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/90"></div>
+<p class="font-label-caps text-label-caps text-secondary mb-1">May 2025</p>
+<p class="font-body-md text-body-md text-on-surface">Published in <span class="text-primary-fixed-dim">IEEE Access (Q1 Journal)</span> on Neural Architectures.</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/90"></div>
+<p class="font-label-caps text-label-caps text-secondary mb-1">Nov 2024</p>
+<p class="font-body-md text-body-md text-on-surface">Attended <span class="text-primary-fixed-dim">Sun Pharma Science Foundation</span> National Symposium on AI in Healthcare.</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/90"></div>
+<p class="font-label-caps text-label-caps text-secondary mb-1">Oct 2024</p>
+<p class="font-body-md text-body-md text-on-surface">Published <span class="text-primary-fixed-dim">"RibCageImp"</span> preprint on arXiv.</p>
+</div>
+<!-- Hidden Items Toggle Container -->
+<div id="hidden-research-items" class="hidden space-y-stack-lg mt-stack-lg">
+    <div class="relative pl-8">
+        <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/90"></div>
+        <p class="font-label-caps text-label-caps text-secondary mb-1">Feb 2024</p>
+        <p class="font-body-md text-body-md text-on-surface">Awarded <span class="text-primary-fixed-dim">2nd Prize</span> for AVINYA Hackathon, ICMI 2024, IIT Jodhpur.</p>
+    </div>
+    <div class="relative pl-8">
+        <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/90"></div>
+        <p class="font-label-caps text-label-caps text-secondary mb-1">2023</p>
+        <p class="font-body-md text-body-md text-on-surface">Published in <span class="text-primary-fixed-dim">Springer JAIHC (Q2 Journal)</span> on Customer Purchasing Behavior.</p>
+    </div>
+    <div class="relative pl-8">
+        <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/90"></div>
+        <p class="font-label-caps text-label-caps text-secondary mb-1">2022</p>
+        <p class="font-body-md text-body-md text-on-surface">Published Explainable AI research in <span class="text-primary-fixed-dim">IETE Journal of Research</span>.</p>
+    </div>
+    <div class="relative pl-8">
+        <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/90"></div>
+        <p class="font-label-caps text-label-caps text-secondary mb-1">2021</p>
+        <p class="font-body-md text-body-md text-on-surface">Authored <span class="text-primary-fixed-dim">5 papers</span> spanning Computer Vision, ML, and Healthcare applications.</p>
+    </div>
+    <div class="relative pl-8">
+        <div class="absolute left-0 top-1.5 w-2.5 h-2.5 rounded-full bg-primary-fixed-dim/90"></div>
+        <p class="font-label-caps text-label-caps text-secondary mb-1">2020</p>
+        <p class="font-body-md text-body-md text-on-surface">Published first machine learning research paper on <span class="text-primary-fixed-dim">Thyroid Disease Prediction</span>.</p>
+    </div>
+</div>
+<!-- View More Button -->
+<button onclick="document.getElementById('hidden-research-items').classList.toggle('hidden'); this.textContent = this.textContent.trim() === 'VIEW MORE' ? 'VIEW LESS' : 'VIEW MORE'" class="mt-8 font-label-caps text-label-caps text-primary-fixed-dim border border-primary-fixed-dim/30 px-4 py-2 rounded hover:bg-primary-fixed-dim hover:text-background transition-colors w-full text-center">
+    VIEW MORE
+</button>
+</div>
+</div>
+<!-- Lab Info -->
+<div class="glass-card p-stack-md rounded-xl border-l-2 border-secondary overflow-hidden">
+<img alt="Lab Environment" class="w-full h-32 object-cover rounded mb-4 opacity-60" src="images/image_9898fcdc82.jpg"/>
+<h4 class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-2">Collaboration</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+            Conducting research under the guidance of <strong>Prof. Deepak Mishra</strong> at the Medical AI Systems Lab, IIT Jodhpur.
+          </p>
+<a class="text-primary-fixed-dim font-label-caps text-label-caps flex items-center gap-2 transition-transform" href="https://maisyslab.github.io/maisys/" target="_blank">
+            VISIT LAB SITE <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="border-t border-glass-edge bg-gradient-to-b from-transparent to-surface-charcoal full-width bottom-0">
+<div class="flex flex-col md:flex-row justify-between items-center w-full py-stack-lg px-section-padding max-w-container-max mx-auto gap-stack-md">
+
+<div class="flex gap-gutter">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:glow-secondary transition-all hover:translate-y-[-2px]" href="#">GitHub</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:glow-secondary transition-all hover:translate-y-[-2px]" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:glow-secondary transition-all hover:translate-y-[-2px]" href="#">Google Scholar</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary hover:glow-secondary transition-all hover:translate-y-[-2px]" href="#">Email</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-right">
+        © 2026 Gyanendra Chaubey
+      </p>
+</div>
+</footer>
+<script>
+    // Simple parallax effect for glass cards
+    document.addEventListener('mousemove', (e) => {
+      const cards = document.querySelectorAll('.glass-card');
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+
+      cards.forEach(card => {
+        const moveX = (x - 0.5) * 8;
+        const moveY = (y - 0.5) * 8;
+        card.style.transform = `perspective(1000px) rotateX(${moveY}deg) rotateY(${moveX}deg) translateY(-4px)`;
+      });
+    });
+
+    // Reset transform when mouse leaves
+    document.addEventListener('mouseleave', () => {
+      document.querySelectorAll('.glass-card').forEach(card => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+      });
+    });
+  </script>
+<script>
+    const canvas = document.getElementById('neural-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Resize canvas to fill window
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    const dots = [];
+    const numDots = 60;
+    const connectionDistance = 150;
+    let mouse = { x: null, y: null };
+
+    // Handle mouse movement
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+    window.addEventListener('mouseout', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    for (let i = 0; i < numDots; i++) {
+      dots.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 1,
+        vy: (Math.random() - 0.5) * 1,
+        radius: Math.random() * 2 + 1
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      dots.forEach(dot => {
+        dot.x += dot.vx;
+        dot.y += dot.vy;
+        
+        if (dot.x < 0 || dot.x > canvas.width) dot.vx *= -1;
+        if (dot.y < 0 || dot.y > canvas.height) dot.vy *= -1;
+        
+        ctx.beginPath();
+        ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+        ctx.fillStyle = '#00dbe9';
+        ctx.fill();
+      });
+
+      // Draw connections
+      for (let i = 0; i < dots.length; i++) {
+        for (let j = i + 1; j < dots.length; j++) {
+          const dx = dots[i].x - dots[j].x;
+          const dy = dots[i].y - dots[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          
+          if (dist < connectionDistance) {
+            ctx.beginPath();
+            ctx.moveTo(dots[i].x, dots[i].y);
+            ctx.lineTo(dots[j].x, dots[j].y);
+            ctx.strokeStyle = `rgba(0, 219, 233, ${1 - dist / connectionDistance})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+        
+        // Mouse interaction
+        if (mouse.x !== null) {
+          const dx = dots[i].x - mouse.x;
+          const dy = dots[i].y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < connectionDistance) {
+            ctx.beginPath();
+            ctx.moveTo(dots[i].x, dots[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = `rgba(110, 6, 208, ${1 - dist / connectionDistance})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body></html>
